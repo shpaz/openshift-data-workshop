@@ -6,7 +6,7 @@ This content is a multi-purpose toolkit for effectively demonstrating Openshift'
 
 - [Exercise 1 - Exploring Basic Capabillities of AMQ Streams](./1-explore-amq-operator/)
 - [Exercise 2 - Create a resilient Kafka cluster using Openshift Data Foundation](./2-amq-persistent-odf/)
-- [Exercise 3 - Monitor your AMQ ecosystem](./6-monitor-amq-system/)
+- [Exercise 3 - Monitor your AMQ ecosystem](./3-monitor-amq-system/)
 
 
 ## Additional information
