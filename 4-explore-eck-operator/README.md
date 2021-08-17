@@ -165,7 +165,7 @@ Login to `Kibana`:
 
 # Complete
 
-Congratulations! You have completed the first exercise :)
+Congratulations! You have completed the forth exercise :)
 
 ---
 [Click Here to return to the Workshop Index](../README.md)

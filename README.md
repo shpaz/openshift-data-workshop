@@ -29,6 +29,7 @@ This content is a multi-purpose toolkit for effectively demonstrating Openshift'
 ## ECK Exercises
 
 - [Exercise 4 - Exploring Basic Capabillities of the ECK Operator](./4-explore-eck-operator/)
+- [Exercise 5 - Data Integrity, Ingestion & Visalization](./5-ingest-visualize-data/)
 
 ## Additional information
  - [ECK Documentation](https://www.elastic.co/guide/index.html)

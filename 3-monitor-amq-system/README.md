@@ -292,7 +292,7 @@ Make sure you have nothing in the `Topology View`.
 
 # Complete
 
-Congratulations! You have completed the second exercise :)
+Congratulations! You have completed the third exercise :)
 
 ---
 [Click Here to return to the Workshop Index](../README.md)
