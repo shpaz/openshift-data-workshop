@@ -1,4 +1,4 @@
-# Exercise 1 - Exploring Basic Capabillities of the ECK Operator 
+# Exercise 4 - Exploring Basic Capabillities of the ECK Operator 
 
 ## Table of Contents
 

@@ -1,4 +1,4 @@
-# Exercise 2 - Create a resilient Kafka cluster using ODF RBD and CruiseControl
+# Exercise 2 - Create a resilient Kafka cluster using ODF RBD 
 
 ## Table of Contents
 

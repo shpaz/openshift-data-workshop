@@ -1,4 +1,4 @@
-# Monitor your Kafka cluster using Kadrop UI
+# Exercise 3 - Monitor your Kafka cluster using Kadrop UI
 
 We all know the importance of Metrics in Production, its ability to help the Operation teams catch onto a problem before it occurs, alert them, and as a result improve out production uptime.  
 
