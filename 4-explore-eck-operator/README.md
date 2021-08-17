@@ -168,4 +168,4 @@ Login to `Kibana`:
 Congratulations! You have completed the first exercise :)
 
 ---
-[Click Here to return to the AMQ streams Workshop](../README.md)
+[Click Here to return to the Workshop Index](../README.md)
