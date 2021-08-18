@@ -40,14 +40,13 @@ Login to the `Openshift Console` and create a project using the `Project` tab on
 
 Leave the default name for your Kafka cluster and make sure you understand the wizard presented to you: 
 
-- What does number of replicas mean?
-- What is an ephemeral storage and how it connects to emptyDir?
-- What are requests and limits? how do we control resources with them?
-
 Hit the `Create` button in order to complete the installation: 
 
 ![](./pictures/create-kafka-instance.png)
 
+- What does number of replicas mean?
+- What is an ephemeral storage and how it connects to emptyDir?
+- What are requests and limits? how do we control resources with them?
 
 ## Step 4 
 
@@ -94,6 +93,8 @@ Let's create a Kafka topic using the `Add+ -> Operator Backed -> Kafka Topic -> 
 
 ![](./pictures/create-topic.png)
 
+
+**Note: If you get an `Invalid Value` error, switch to `YAML View` and switch the number of partitions from `'12'` to `12`.**
 
 Make sure you leave the default values and hit the `Create` button. 
 
@@ -263,8 +264,9 @@ The failure happened because we have accessed a node that had no healthy replica
 Delete the exercise's resources using:
 *  `Topology -> hello-producer -> Delete Deployment`
 *  `Topology -> hello-consumer -> Delete Deployment`
-*  `Search -> Resources -> KafkaUser -> Delete`
-*  `Search -> Resources -> Kafka -> Delete`
+*  `Search -> Resources -> KafkaUser -> Delete my-user`
+*  `Search -> Resources -> KafkaTopic -> Delete all topics`
+*  `Search -> Resources -> Kafka -> Delete my-cluster`
 
 Make sure you have nothing in the `Topology View`.
 # Complete

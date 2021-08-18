@@ -24,7 +24,7 @@ Make sure you connect to the cluster before starting this exercise!
 
 ## Step 1
 
-From your `Kibana`'s default page, Make sure you hit the `Add Data` button in order to ingest data into your `Elasticsearch` instance: 
+From your `Kibana`'s default page, Make sure you hit the `Add Data -> Sample data` button in order to ingest data into your `Elasticsearch` instance: 
 
 ![](../1-explore-amq-operator/pictures/kibana-add-data.png)
 

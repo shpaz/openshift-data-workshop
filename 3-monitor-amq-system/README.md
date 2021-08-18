@@ -40,7 +40,7 @@ Hit the `Create` button in order to complete the installation (Make sure to seit
 
 ![](../1-explore-amq-operator/pictures/kafka-persistent.png)
 
-In Addition, switch to the `YAML View` section and add the following line under the `Storage` section:
+In Addition, switch to the `YAML View` section and add the following line under the `Storage` section (**For both `kafka` and `zookeeper`**)::
 
 ```bash
 storage:
@@ -275,18 +275,63 @@ Make sure you can Access the `Kadrop` UI by pressing the arrow on the right when
 
 ![](../1-explore-amq-operator/pictures/kadrop.png)
 
+*Note: Pay attention to the `Number of partitions (% of total)`, as each broker gets ~33% of the partitions. This will be very relevant to the next steps.*
 
 ## Step 13
 
-Play with the number of your consumers and producers to see how the data changes in your `Kadrop` dashboards.
+As before, let's scale our cluster once again and wait for the rollout to finish.
+
+In order to do so, go to `Search -> Resources -> Kafka -> my-cluster -> YAML` and scale the number of `Kafka` replicas to `4` and hit `Save`. 
+
+Make sure that your cluster is starting the rollout process, and that a new `Kafka` node was added to the cluster by going to `Topology -> my-cluster-kafka -> : 
+
+![](../1-explore-amq-operator/pictures/kafka-rollout.png)
+
 
 ## Step 14
 
+Go back to `Kadrop`, notice how you suddenly see `Missing Brokers` and you are left with only two brokers each time (so you won't lose majority) and partition distribution is now 50%-50% between the leftover brokers. 
+
+Refresh the page until you see `4` brokers in your `Kadrop` broker list:
+
+![](../1-explore-amq-operator/pictures/kadrop-4-brokers.png)
+
+### Pause To Think
+
+*Why we don't see any partition allocation to the forth broker? what happaned?*
+
+Try to answer that question **by yourself :)**
+
+## Step 15
+
+Under `Topics` pick our created topic which is `my-topic` and click the `View Messages` button, pick a partition and print the messages using `View Messages` button: 
+
+![](../1-explore-amq-operator/pictures/kadrop-messages.png)
+
+## Step 16 
+
+Go back to the `Topology -> hello-world-consumer -> Details` and scale the number of consumers to `0`.
+
+After that, do the same with the producer, but instead of scaling down, scale it *up* to `2'. 
+
+Got back to `Kadrop` and look at the `Consumers` section, to verify the lag that was created under `Combined Lag`: 
+
+![](../1-explore-amq-operator/pictures/kadrop-lag.png)
+
+## Step 17
+
+Scale the number of consumers to `3` and see how fast the lag is getting disappeared: 
+
+![](../1-explore-amq-operator/pictures/kadrop-no-lag.png)
+
+
 Delete the exercise's resources using:
+
 *  `Topology -> hello-producer -> Delete Deployment`
 *  `Topology -> hello-consumer -> Delete Deployment`
-*  `Search -> Resources -> KafkaUser -> Delete`
-*  `Search -> Resources -> Kafka -> Delete`
+*  `Search -> Resources -> KafkaUser -> Delete KafkaUser`
+*  `Search -> Resources -> KafkaTopic -> Delete all topics`
+*  `Search -> Resources -> Kafka -> Delete Kafka`
 
 Make sure you have nothing in the `Topology View`.
 

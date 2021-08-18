@@ -12,7 +12,8 @@
 Getting to know better with partition allocation and logDirs persistency:
 - Deploy a Kafka cluster using Openshift Data Foundation RBD as block backend for Kafka logDirs
 - Understand parition allocation across Kafka nodes, In terms of failure and rebalancing 
-- Use CruiseControl to get automatic rebalancing of paritions  
+- Understand how we can scale our cluster seamlessly in an automated way 
+- Understand how operators help us in managing day2 operations 
 
 # Diagram
 
@@ -36,7 +37,7 @@ Hit the `Create` button in order to complete the installation (Make sure to seit
 
 ![](../1-explore-amq-operator/pictures/kafka-persistent.png)
 
-In Addition, switch to the `YAML View` section and add the following line under the `Storage` section:
+In Addition, switch to the `YAML View` section and add the following line under the `Storage` section (**For both `kafka` and `zookeeper`**):
 
 ```bash
 storage:
@@ -231,19 +232,38 @@ From the `Topology -> my-cluster-kafka -> Resources`, Click on one of the pods a
 ![](../1-explore-amq-operator/pictures/delete-pod.png)
 
 
-Go back to you cosumer logs and verify that you don't see a disconnection as the pod attached the previously used persistent volume. 
+Go back to you cosumer logs and verify that you don't see that your cluster recovered much faster, a thing that can take quite a lot of time to rebalance the data. 
+
+### Pause to Think  
+
+*How did this happen? How the broker know which volume to pick? why we didn't see any new volume being created? why wasn't the volume deleted?*
 
 
 ## Step 15 
 
+Now, Let's scale our cluster to see how easy it is to perform day2 operations with our cluster. 
+
+In order to do so, go to `Search -> Resources -> Kafka -> my-cluster -> YAML` and scale the number of `Kafka` replicas to `4` and hit `Save`. 
+
+Make sure that your cluster is starting the rollout process, and that a new `Kafka` node was added to the cluster by going to `Topology -> my-cluster-kafka -> : 
+
+![](../1-explore-amq-operator/pictures/kafka-rollout.png)
+
+*Note: Pay attention to the fact that the entire cluster rolled-out one by one so that we won't have any down time, you can try and login the your consumer's logs once again to verify all data is still there*
+
 Delete the exercise's resources using:
 *  `Topology -> hello-producer -> Delete Deployment`
 *  `Topology -> hello-consumer -> Delete Deployment`
-*  `Search -> Resources -> KafkaUser -> Delete`
-*  `Search -> Resources -> Kafka -> Delete`
+*  `Search -> Resources -> KafkaUser -> Delete KafkaUser`
+*  `Search -> Resources -> KafkaTopic -> Delete all topics`
+*  `Search -> Resources -> Kafka -> Delete Kafka`
 
 Make sure you have nothing in the `Topology View`.
+
 *Question*: Were PVs deleted or not? If not, why? (Try to remember what we talked about for `Volume Reclamation Policies`) 
+
+Delete all PVCs: 
+*  `Project -> PVC -> Delete`
 
 # Complete
 

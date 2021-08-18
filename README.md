@@ -1,9 +1,8 @@
 # Openshift Data Workshop 
 
+This workshop's content acts as a multi-purpose toolkit for effectively demonstrating Openshift's capabilities as a Data Platform for provisioning, configuration, automation and scaling of various data services. The content can be passed as instructor-led, hands-on or self-paced workshop.
+
 ![](https://sdtimes.com/wp-content/uploads/2021/06/OpenShift-Open-Graph-Image_1.png)
-
-This content is a multi-purpose toolkit for effectively demonstrating Openshift's capabilities as a Data Platform and can be passed as instructor-led, hands-on or self-paced workshop.
-
 ---
 
 ## Red Hat AMQ Streams 
