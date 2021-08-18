@@ -2,7 +2,7 @@
 
 This workshop's content acts as a multi-purpose toolkit for effectively demonstrating Openshift's capabilities as a Data Platform for provisioning, configuration, automation and scaling of various data services. The content can be passed as instructor-led, hands-on or self-paced workshop.
 
-![](https://sdtimes.com/wp-content/uploads/2021/06/OpenShift-Open-Graph-Image_1.png)
+![](https://assets.openshift.com/hubfs/images/logos/Logo-Red_Hat-OpenShift_Container_Platform-A-Standard-RGB.svg)
 ---
 
 ## Red Hat AMQ Streams 
@@ -23,7 +23,7 @@ This workshop's content acts as a multi-purpose toolkit for effectively demonstr
 
 ## Elastic Cloud 
 
-![](https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/163917369/original/a150030dce7c1442c04f46682b74827cfd594990/create-and-maintain-elastic-cloud-soa-for-you.jpg)
+![](https://portworx.com/wp-content/uploads/2019/02/Twitter-Social-Graphic-29.png)
 
 ## ECK Exercises
 
