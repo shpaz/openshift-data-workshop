@@ -205,7 +205,7 @@ Verify that you consumer and producer are working as expected, by printing their
 
 Now Let's deploy `Kadrop` which is a simple UI for Kafka clusters. We'll see how we can browse our entire Kafka configuration, Monitor our cluster and even view the meesages landing in our created Topic. 
 
-In order to do so, We'll have to create three components, The first one is the deployment itself for the `Kadrop` pod:
+In order to do so, We'll have to create three components, The first one is the deployment itself for the `Kadrop` pod. Go to `Topology -> Add+ -> YAML` and past the following:
 
 ```bash
 apiVersion: apps.openshift.io/v1
@@ -235,7 +235,7 @@ spec:
             value: "/"
 ```
 
-Now that we have the `Pod` running, We'll deploy a `Service` that will help up interact within the cluster itself: 
+Now that we have the `Pod` running, We'll deploy a `Service` that will help up interact within the cluster itself. Go to `Topology -> Add+ -> YAML` and past the following:
 
 ```bash
 apiVersion: v1
@@ -251,7 +251,7 @@ spec:
       targetPort: 9000
 ```
 
-Now, We'll create a `Route` so we could access the `Kadrop` UI outside of the Openshift cluster:
+Now, We'll create a `Route` so we could access the `Kadrop` UI outside of the Openshift cluster. Go to `Topology -> Add+ -> YAML` and past the following:
 
 ```bash
 kind: Route
