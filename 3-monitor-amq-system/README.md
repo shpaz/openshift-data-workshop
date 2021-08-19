@@ -54,7 +54,7 @@ Veirfy that your Kafka cluster installation had been successful by using the `Pr
 
 ![](../1-explore-amq-operator/pictures/get-pods.png)
 
--   We have our `amq-streams-cluster-oprator` which is the amq-streams operator
+-   We have our `my-cluster-entity-operator` which is the amq-streams operator
 -   We have 3 Kafka pod and 3 Zookeeper pods as stated in `spec.kafka.replicas` and `spec.zookeeper.replicas` accordingly
 -   we also have an entity operator, which comprises of the topic operator and the User operator
 
