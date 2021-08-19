@@ -123,7 +123,7 @@ The Kafka topic was created with 12 parititions and replication factor of 3.
 
 Let's create a Kafka user to interact with the created topic, move through the `KafkaUser` CR to verify that you understand how user management is handled in AMQ.
 
-Copy this YAML, and paste it in `Add+ -> Operator Backed -> Kafka User` in order to create the `Kafka User` CR: 
+Go to `Add+ -> Operator Backed -> Kafka User` in order to create the `Kafka User`: 
  
 
 ![](./pictures/create-user.png)
