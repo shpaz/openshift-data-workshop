@@ -65,10 +65,7 @@ Ensure that the Kafka nodes are indeed using an persistent volumes for storing t
 ![](../1-explore-amq-operator/pictures/persistent-pvcs.png)
 
 
-## Step 7 
-
-Having our Kafka cluster using emptyDirs means that on failure that Kafka cluster will have to replicate data on his own because **the underlying volume is gone**.
-In this case we will count on Kafka's replication mechanism for replicating the data which can sometimes cause unwanted latency. 
+## Step 6 
 
 To do so, we'll create a producer a Topic, a Producer and a Consumer that will send messages to one another. Producer --> Topic --> Consumer. 
 
@@ -77,7 +74,7 @@ To do so, we'll create a producer a Topic, a Producer and a Consumer that will s
 We'll kill one of the Kafka nodes and see how it affects the offset being transfered between the producer and the consumer. 
 
 
-## Step 8 
+## Step 7
 
 Let's create a Kafka topic using the `Add+ -> Operator Backed -> Kafka Topic -> Create` with the name `my-topic`: 
 
@@ -86,7 +83,7 @@ Let's create a Kafka topic using the `Add+ -> Operator Backed -> Kafka Topic -> 
 
 Make sure you leave the default values and hit the `Create` button. 
 
-## Step 9 
+## Step 8
 
 Validate that the created Kafka topic was created successfuly by using `get kt` command (only if you have the `oc` command-line): 
 
@@ -99,7 +96,7 @@ my-topic   12           3
 
 The Kafka topic was created with 12 parititions and replication factor of 3. 
 
-## Step 10 
+## Step 9 
 
 Let's create a Kafka user to interact with the created topic, move through the `KafkaUser` CR to verify that you understand how user management is handled in AMQ.
 
@@ -110,7 +107,7 @@ Go to `Add+ -> Operator Backed -> Kafka User` in order to create the `Kafka User
 
 Before you hit the `Create` button, switch to the `YAML View` section to verify you understand all the ACLs that is being given to our created user.
 
-## Step 11
+## Step 10
 
 Now let's create a Kafka Producer that will write messages to our `my-topic` topic, and a consumer that will consume those messages via `Add+ -> YAML` 
 
@@ -211,7 +208,7 @@ spec:
             value: "5000"
 ```
 
-## Step 13 
+## Step 11 
 
 Verify that both consumer and producer works as expected by browsing their logs with `Topology -> hello-producer/consumer -> Resources - View Logs`, for example: 
 
@@ -223,7 +220,7 @@ Verify that both consumer and producer works as expected by browsing their logs 
 ![](../1-explore-amq-operator/pictures/consumer-logs.png)
 
 
-## Step 14 
+## Step 12 
 
 Now after that we have our producer and consumer running as expected, open another Let's try to delete one of our Kafka pods and see what happens.
 
@@ -239,7 +236,7 @@ Go back to you cosumer logs and verify that you don't see that your cluster reco
 *How did this happen? How the broker know which volume to pick? why we didn't see any new volume being created? why wasn't the volume deleted?*
 
 
-## Step 15 
+## Step 13 
 
 Now, Let's scale our cluster to see how easy it is to perform day2 operations with our cluster. 
 
