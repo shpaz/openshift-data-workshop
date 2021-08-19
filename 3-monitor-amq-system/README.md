@@ -75,7 +75,7 @@ Make sure you leave the default values and hit the `Create` button.
 
 ## Step 7
 
-Validate that the created Kafka topic was created successfuly by using `get kt` command: 
+Validate that the created Kafka topic was created successfuly by using `get kt` command (only if you have the `oc` command-line): 
 
 ```bash 
 $ oc get kt
