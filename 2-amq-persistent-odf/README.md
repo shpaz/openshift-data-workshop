@@ -37,13 +37,6 @@ Hit the `Create` button in order to complete the installation (Make sure to seit
 
 ![](../1-explore-amq-operator/pictures/kafka-persistent.png)
 
-In Addition, switch to the `YAML View` section and add the following line under the `Storage` section (**For both `kafka` and `zookeeper`**):
-
-```bash
-storage:
-  type: persistent-claim
-  size: 2Gi
-```
 
 ## Step 3 
 
@@ -85,7 +78,7 @@ Make sure you leave the default values and hit the `Create` button.
 
 ## Step 8
 
-Validate that the created Kafka topic was created successfuly by using `get kt` command (only if you have the `oc` command-line): 
+Validate that the created Kafka topic was created successfuly by using `get kt` command (only if you have the `oc` command-line, if not make sure to see how it looks): 
 
 ```bash 
 $ oc get kt
@@ -137,16 +130,6 @@ spec:
               secretKeyRef:
                 name: my-cluster-cluster-ca-cert
                 key: ca.crt
-          - name: USER_CRT
-            valueFrom:
-              secretKeyRef:
-                name: my-user
-                key: user.crt
-          - name: USER_KEY
-            valueFrom:
-              secretKeyRef:
-                name: my-user
-                key: user.key
           - name: BOOTSTRAP_SERVERS
             value: my-cluster-kafka-bootstrap:9093
           - name: TOPIC
@@ -186,16 +169,6 @@ spec:
               secretKeyRef:
                 name: my-cluster-cluster-ca-cert
                 key: ca.crt
-          - name: USER_CRT
-            valueFrom:
-              secretKeyRef:
-                name: my-user
-                key: user.crt
-          - name: USER_KEY
-            valueFrom:
-              secretKeyRef:
-                name: my-user
-                key: user.key
           - name: BOOTSTRAP_SERVERS
             value: my-cluster-kafka-bootstrap:9093
           - name: TOPIC
@@ -242,7 +215,7 @@ Now, Let's scale our cluster to see how easy it is to perform day2 operations wi
 
 In order to do so, go to `Search -> Resources -> Kafka -> my-cluster -> YAML` and scale the number of `Kafka` replicas to `4` and hit `Save`. 
 
-Make sure that your cluster is starting the rollout process, and that a new `Kafka` node was added to the cluster by going to `Topology -> my-cluster-kafka -> : 
+Make sure that your cluster is starting the rollout process, and that a new `Kafka` node was added to the cluster by going to `Topology -> my-cluster-kafka ->` : 
 
 ![](../1-explore-amq-operator/pictures/kafka-rollout.png)
 

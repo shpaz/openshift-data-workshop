@@ -40,14 +40,6 @@ Hit the `Create` button in order to complete the installation (Make sure to seit
 
 ![](../1-explore-amq-operator/pictures/kafka-persistent.png)
 
-In Addition, switch to the `YAML View` section and add the following line under the `Storage` section (**For both `kafka` and `zookeeper`**)::
-
-```bash
-storage:
-  type: persistent-claim
-  size: 2Gi
-  deleteClaim: true
-```
 ## Step 3 
 
 Veirfy that your Kafka cluster installation had been successful by using the `Project -> Pods` in the inventory: 
@@ -127,16 +119,6 @@ spec:
               secretKeyRef:
                 name: my-cluster-cluster-ca-cert
                 key: ca.crt
-          - name: USER_CRT
-            valueFrom:
-              secretKeyRef:
-                name: my-user
-                key: user.crt
-          - name: USER_KEY
-            valueFrom:
-              secretKeyRef:
-                name: my-user
-                key: user.key
           - name: BOOTSTRAP_SERVERS
             value: my-cluster-kafka-bootstrap:9093
           - name: TOPIC
@@ -176,16 +158,6 @@ spec:
               secretKeyRef:
                 name: my-cluster-cluster-ca-cert
                 key: ca.crt
-          - name: USER_CRT
-            valueFrom:
-              secretKeyRef:
-                name: my-user
-                key: user.crt
-          - name: USER_KEY
-            valueFrom:
-              secretKeyRef:
-                name: my-user
-                key: user.key
           - name: BOOTSTRAP_SERVERS
             value: my-cluster-kafka-bootstrap:9093
           - name: TOPIC

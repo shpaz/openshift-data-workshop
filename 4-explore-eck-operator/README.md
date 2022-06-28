@@ -38,7 +38,7 @@ Login to the `Openshift Console` and create a project using the `Project` tab on
 
 ## Step 3 
 
-Switch to `YAML View` under the `Create Elasticsearch` section, and make sure you understand each one of the values presented in the YAML. 
+Under the `Create Elasticsearch` section, and make sure you understand each one of the values presented in the YAML. 
 
 Switch the number of `Elasticsearch` instances to 1 and hit the `Create` button on the down left in order to complete the installation: 
 

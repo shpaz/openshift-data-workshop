@@ -38,7 +38,9 @@ Login to the `Openshift Console` and create a project using the `Project` tab on
 
 ## Step 3 
 
-Leave the default name for your Kafka cluster and make sure you understand the wizard presented to you: 
+Leave the default name for your Kafka cluster and make sure you understand the wizard presented to you. 
+
+Make sure that you open both `Kafka` and `Zookeeper` dropdown lists, to configure each one of these components. 
 
 Hit the `Create` button in order to complete the installation: 
 
@@ -103,7 +105,7 @@ Make sure you leave the default values and hit the `Create` button.
 
 ## Step 9 
 
-Validate that the created Kafka topic was created successfuly by using `get kt` command (only if you have the `oc` command-line): 
+Validate that the created Kafka topic was created successfuly by using `get kt` command (only if you have the `oc` command-line, if not pay attention to how it looks): 
 
 ```bash 
 $ oc get kt
@@ -160,16 +162,6 @@ spec:
               secretKeyRef:
                 name: my-cluster-cluster-ca-cert
                 key: ca.crt
-          - name: USER_CRT
-            valueFrom:
-              secretKeyRef:
-                name: my-user
-                key: user.crt
-          - name: USER_KEY
-            valueFrom:
-              secretKeyRef:
-                name: my-user
-                key: user.key
           - name: BOOTSTRAP_SERVERS
             value: my-cluster-kafka-bootstrap:9093
           - name: TOPIC
@@ -209,16 +201,6 @@ spec:
               secretKeyRef:
                 name: my-cluster-cluster-ca-cert
                 key: ca.crt
-          - name: USER_CRT
-            valueFrom:
-              secretKeyRef:
-                name: my-user
-                key: user.crt
-          - name: USER_KEY
-            valueFrom:
-              secretKeyRef:
-                name: my-user
-                key: user.key
           - name: BOOTSTRAP_SERVERS
             value: my-cluster-kafka-bootstrap:9093
           - name: TOPIC
