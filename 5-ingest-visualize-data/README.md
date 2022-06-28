@@ -24,7 +24,7 @@ Make sure you connect to the cluster before starting this exercise!
 
 ## Step 1
 
-From your `Kibana`'s default page, Make sure you hit the `Add Data -> Sample data` button in order to ingest data into your `Elasticsearch` instance: 
+From your `Kibana`'s default page, Make sure you hit the `Try Sample Data --> Add Data -> Sample data` button in order to ingest data into your `Elasticsearch` instance: 
 
 ![](../1-explore-amq-operator/pictures/kibana-add-data.png)
 
@@ -103,7 +103,7 @@ Wait and make sure the a new one is created and is added as expected to the clus
 
 Now let's see how we can monitor our infrastructure using the existing `Prometheus & Grafana` stack Openshift Provides. 
 
-In the `Openshift Console`, navigate to `Monitoring` and change the time range to `1 hour`: 
+In the `Openshift Console`, navigate to `Observe` and change the time range to `1 hour`: 
 
 ![](../1-explore-amq-operator/pictures/monitor-eck.png)
 
